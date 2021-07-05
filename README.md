@@ -1,18 +1,26 @@
-# Getting Started with Create React App
+# Développement
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Extensions VSCode à installer
 
-## Available Scripts
+- Auto Rename Tag
+- Tailwind CSS IntelliSense
+- PostCSS Language Support
+- Prettier - Code formatter
+- Reactjs code snippets
 
-In the project directory, you can run:
+## Démarrer le projet
 
-### `npm start`
+### `npm run server`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Ouvre un serveur d'API REST sur `http://localhost:9000`
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### `npm run client`
+
+Ouvre un serveur de développement React (équivaut à un `npm start` classique), sur `http://localhost:3000`)
+
+---
+
+## Commandes classiques
 
 ### `npm test`
 
