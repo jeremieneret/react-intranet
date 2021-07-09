@@ -1,7 +1,7 @@
 import axios from 'axios';
 // npm install axios
 
-const SERVER_ENDPOINT = 'http://localhost:9000';
+const SERVER_ENDPOINT = process.env.NODE_ENV === 'production' ? '' : 'http://localhost:9000';
 
 const PeopleService = {
     // Récupérer le tableau des collaborateur depuis le serveur

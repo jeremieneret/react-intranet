@@ -1,6 +1,7 @@
 require('colors');
 const express = require('express');
 const morgan = require('morgan');
+const path = require('path');
 
 // Création d'une application ExpressJS
 const app = express();
@@ -27,12 +28,20 @@ app.post('/collaborateurs', collaborateur.create);
 app.put('/collaborateur/:id', collaborateur.update);
 app.delete('/collaborateur/:id', collaborateur.remove);
 
+// Route pour le front
+app.get('/', (req, res) => {
+  res.sendFile(path.resolve('./build/index.html'));
+});
+
+// Ressources statiques
+app.use('/', express.static(path.resolve('./build')));
+
 /*
     Configuration
 */
 
-app.set('ip', 'localhost');
-app.set('port', 9000);
+app.set('ip', process.env.IP || 'localhost');
+app.set('port', process.env.PORT || 9000);
 
 // Transformation de la méthode app.listen() d'Express en "Promesse JS"
 const startApp = (app) => {
